@@ -41,11 +41,24 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-const navNL = document.querySelectorAll('nav a');
+let navItems = document.querySelectorAll('nav a');
 
-navNL.forEach( (item, index) => {
+navItems.forEach( (item, index) => {
   item.textContent = siteContent["nav"][`nav-item-${index+1}`];
+  item.style.color = "green";
 });
+
+let nav = document.querySelector('nav');
+
+let blogNavItem = document.createElement("A");
+blogNavItem.textContent = "Blog";
+nav.prepend(blogNavItem);
+blogNavItem.style.color = "green";
+
+let testimonialNavItem = document.createElement("A");
+testimonialNavItem.textContent = "Testimonials";
+nav.appendChild(testimonialNavItem);
+testimonialNavItem.style.color = "green";
 
 let codeSnippet = document.querySelector("#cta-img");
 codeSnippet.setAttribute('src', siteContent["cta"]["img-src"]);
@@ -103,3 +116,6 @@ contactEmail.textContent = siteContent["contact"]["email"];
 
 let footer = document.querySelector("footer p");
 footer.textContent = siteContent["footer"]["copyright"];
+
+
+
