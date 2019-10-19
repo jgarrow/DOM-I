@@ -44,6 +44,7 @@ window.addEventListener('load', (e) => {
         let msHundredsCounter = 0;
         let secondOnesCounter = 0;
         let secondTensCounter = 0;
+        
         let timer = setInterval(function() {
 
             document.getElementById('resetbtn').onclick = function() {
@@ -52,6 +53,11 @@ window.addEventListener('load', (e) => {
                 msHundreds.textContent = 0;
                 secondOnes.textContent = 0;
                 secondTens.textContent = 0;
+
+                if (document.querySelector('.digits').classList.contains('redDigit')) {
+                    document.querySelector('.digits').classList.remove('redDigit');
+                }
+
                 document.getElementById('startbtn').disabled = false;
             }
             
