@@ -66,7 +66,17 @@ codeSnippet.setAttribute('src', siteContent["cta"]["img-src"]);
 let codeSnippetMiddle = document.querySelector('#middle-img');
 codeSnippetMiddle.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
-let headline = document.querySelector(".cta-text h1");
+// let headlineBox = document.querySelector(".cta-text");
+// headlineBox.style.width = '20%';
+let headlineContainer = document.createElement('div');
+let headline = document.querySelector('.cta-text h1');
+headline.textContent = siteContent['cta']['h1'];
+// headlineContainer.appendChild(headline);
+// headlineBox.prepend(headlineContainer);
+// headlineContainer.style.width = '20%';
+// headlineContainer.style.display = 'flex';
+// headlineContainer.style.justifyContent = 'center';
+// headlineContainer.style.alignItems = 'center';
 headline.innerHTML = siteContent["cta"]["h1"].split(" ").join("<br>");
 
 let button = document.querySelector(".cta button");
@@ -101,6 +111,9 @@ visionHeader.textContent = siteContent["main-content"]["vision-h4"];
 
 let visionContent = document.querySelectorAll(".bottom-content p")[2];
 visionContent.textContent = siteContent["main-content"]["vision-content"];
+
+let contactBox = document.querySelector('.contact');
+contactBox.style.width = '20%';
 
 let contactHeader = document.querySelector(".contact h4");
 contactHeader.textContent = siteContent["contact"]["contact-h4"];
